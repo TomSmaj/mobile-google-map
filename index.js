@@ -14,16 +14,6 @@ function initMap() {
         zoom: 18
     });
     infoWindow = new google.maps.InfoWindow;
-    //
-
-    google.maps.event.addListener(map, 'click', function (event) {
-        //alert();
-        //alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
-        // document.getElementById('glong').value = event.latLng.lng();
-        // document.getElementById('glat').value = event.latLng.lat();
-    });
-
-
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -35,10 +25,6 @@ function initMap() {
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('You are here');
-            document.getElementById('glong').value = position.coords.longitude;
-            document.getElementById('glat').value = position.coords.latitude;
-            //alert(pos['lat']);
-            //alert(pos['lng']);
             infoWindow.open(map);
             map.setCenter(pos);
         }, function () {
